@@ -1,3 +1,47 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Variables
+$background: #f3f3f3;
+
+// Styles
+body {
+  background: $background;
+}
+
+.container {
+  max-width: 100%;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 20px 40px;
+
+  .logo {
+    float: left;
+    margin: 0 auto;
+  }
+
+  .site-nav {
+    float: right;
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+
+}
+
+.site-content {
+
+}
+
+.site-footer {
+
+}

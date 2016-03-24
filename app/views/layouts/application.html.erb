@@ -11,7 +11,22 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<%= yield %>
+<div class="site-header">
+  <h3 class="logo">Playlistr</h3>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/">New Playlist</a></li>
+      <li><a href="">Logout</a></li>
+    </ul>
+  </nav>
+</div>
+<!-- /.site-header -->
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
