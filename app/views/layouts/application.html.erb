@@ -7,22 +7,32 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
 <div class="site-header">
-  <h3 class="logo">Playlistr</h3>
+  <div class="logo">
+    <%= link_to (image_tag "logo.svg"), root_path %>
+  </div>
 
   <nav class="site-nav">
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/">New Playlist</a></li>
-      <li><a href="">Logout</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to "New Playlist", new_post_path %></li>
+        <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+      <% else %>
+        <li><%= link_to('Login', new_user_session_path)  %></li>
+      <% end %>
     </ul>
   </nav>
 </div>
 <!-- /.site-header -->
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+  
+  <% else %>
+    <div class="test">Test</div>
+<% end %>
 
 <div class="container">
   <%= yield %>
